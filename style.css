@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --paper: #faf8f2;
+  --ink: #1f1d1a;
+  --body: #45413a;
+  --muted: #6a6356;
+  --line: #e3dccd;
+  --green: #177245;
+  --red: #b3361f;
+  --hl: #ffec99;
+  --hl-soft: #fff5c2;
+}
+
+body {
+  background-color: var(--paper);
+  background-image: radial-gradient(rgba(31, 29, 26, 0.07) 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: var(--body);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+main {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+nav a {
+  color: var(--body);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+nav a:hover {
+  color: var(--ink);
+}
+
+.name {
+  margin: 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 2.1rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.clock {
+  margin: 0.4rem 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+p {
+  margin: 1.1rem 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+p a {
+  color: var(--ink);
+  text-decoration: none;
+  background: linear-gradient(transparent 62%, var(--hl) 62%);
+  transition: background-color 150ms ease;
+}
+
+p a:hover {
+  background-color: var(--hl-soft);
+}
+
+/* the market */
+.market {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 1.1rem 0 1.2rem;
+}
+
+.market-title {
+  margin: 0;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--ink);
+}
+
+.market-title .live {
+  font-style: normal;
+  font-size: 11px;
+  color: var(--muted);
+  margin-left: 0.4rem;
+}
+
+.market ul {
+  list-style: none;
+  margin: 0.9rem 0 0;
+  padding: 0;
+  font-size: 12.5px;
+}
+
+.market li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.32rem 0;
+}
+
+.market .q {
+  color: var(--body);
+  white-space: nowrap;
+}
+
+.market .leader {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 1px dotted var(--line);
+  transform: translateY(-3px);
+}
+
+.market .odds {
+  white-space: nowrap;
+  color: var(--muted);
+}
+
+.market .side {
+  color: var(--ink);
+}
+
+.market .pct {
+  color: var(--ink);
+}
+
+.market .delta {
+  display: inline-block;
+  min-width: 1.1em;
+  font-size: 11px;
+}
+
+.market .delta.up {
+  color: var(--green);
+}
+
+.market .delta.down {
+  color: var(--red);
+}
+
+.market li.resolved .odds {
+  color: var(--green);
+}
+
+.market li.resolved .side,
+.market li.resolved .pct {
+  color: var(--green);
+}
+
+.disclaimer {
+  margin-top: 0.9rem;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.links {
+  margin-top: 2.2rem;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.links a {
+  color: var(--body);
+  background: none;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.links a:hover {
+  color: var(--ink);
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 2.5rem;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 1.8rem;
+  }
+
+  .market ul {
+    font-size: 11px;
+  }
+
+  .market .q {
+    white-space: normal;
+  }
+}
+
+a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+p a:focus-visible {
+  background-color: var(--hl-soft);
+}
+
+nav a:focus-visible,
+.links a:focus-visible {
+  color: var(--ink);
+}
