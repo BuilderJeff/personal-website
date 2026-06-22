@@ -22,7 +22,7 @@
     const hour = parseInt(hourFmt.format(now), 10);
     let status = "probably building.";
     if (hour >= 2 && hour < 8) status = "should be asleep.";
-    else if (hour >= 8 && hour < 15) status = "in class (allegedly).";
+    else if (hour >= 8 && hour < 15) status = "touching grass (allegedly).";
     el.textContent = `it's ${time} in new york. ${status}`;
   }
 
