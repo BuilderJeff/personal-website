@@ -1,29 +1,20 @@
-// new york clock + status line
+// los angeles clock + status line
 (() => {
   const el = document.getElementById("clock");
   if (!el) return;
 
   const timeFmt = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/New_York",
+    timeZone: "America/Los_Angeles",
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
-  });
-  const hourFmt = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/New_York",
-    hour: "numeric",
-    hourCycle: "h23",
   });
 
   function tick() {
     const now = new Date();
     // \s also catches the narrow no-break space some ICU versions put before am/pm
     const time = timeFmt.format(now).toLowerCase().replace(/\s/g, "");
-    const hour = parseInt(hourFmt.format(now), 10);
-    let status = "probably building.";
-    if (hour >= 2 && hour < 8) status = "should be asleep.";
-    else if (hour >= 8 && hour < 15) status = "touching grass (allegedly).";
-    el.textContent = `it's ${time} in new york. ${status}`;
+    el.textContent = `it's ${time} in los angeles. probably building.`;
   }
 
   tick();
