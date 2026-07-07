@@ -129,6 +129,10 @@ p a:hover {
   background-color: var(--hl-soft);
 }
 
+.mark {
+  background: linear-gradient(transparent 62%, var(--hl) 62%);
+}
+
 /* the market */
 .market {
   margin-top: 2.5rem;
