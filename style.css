@@ -92,6 +92,45 @@ p a:hover {
   background-color: var(--hl-soft);
 }
 
+.lead {
+  margin-bottom: 0;
+}
+
+.feats {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+.feats li {
+  padding-left: 1.1rem;
+  text-indent: -1.1rem;
+  margin-top: 0.3rem;
+}
+
+.feats li::before {
+  content: "\00B7\00A0";
+  color: var(--muted);
+}
+
+.feats a {
+  color: var(--ink);
+  text-decoration: none;
+  background: linear-gradient(transparent 62%, var(--hl) 62%);
+  transition: background-color 150ms ease;
+}
+
+.feats a:hover {
+  background-color: var(--hl-soft);
+}
+
+.feats a:focus-visible {
+  background-color: var(--hl-soft);
+}
+
 /* the market */
 .market {
   margin-top: 2.5rem;
