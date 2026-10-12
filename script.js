@@ -1,10 +1,10 @@
-// los angeles clock + status line
+// new york clock + status line
 (() => {
   const el = document.getElementById("clock");
   if (!el) return;
 
   const timeFmt = new Intl.DateTimeFormat("en-US", {
-    timeZone: "America/Los_Angeles",
+    timeZone: "America/New_York",
     hour: "numeric",
     minute: "2-digit",
     hour12: true,
@@ -14,7 +14,7 @@
     const now = new Date();
     // \s also catches the narrow no-break space some ICU versions put before am/pm
     const time = timeFmt.format(now).toLowerCase().replace(/\s/g, "");
-    el.textContent = `it's ${time} in los angeles. probably building.`;
+    el.textContent = `it's ${time} in new york. probably building.`;
   }
 
   tick();
